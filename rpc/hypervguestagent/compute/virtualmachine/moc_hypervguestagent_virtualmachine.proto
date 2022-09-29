@@ -1,0 +1,27 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the Apache v2.0 license.
+
+syntax = "proto3";
+option go_package = "github.com/microsoft/moc/rpc/hypervguestagent/compute";
+package moc.hypervguestagent.compute;
+
+import "google/protobuf/empty.proto";
+import "moc_common_common.proto";
+import "moc_common_computecommon.proto";
+import "moc_common_notification.proto";
+
+message VirtualMachineRunCommandRequest {
+	VirtualMachineRunCommandScriptSource Source = 2;
+	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 3;
+	string RunAsUser = 4 [(sensitive) = true];
+	string RunAsPassword = 5 [(sensitive) = true];
+}
+
+message VirtualMachineRunCommandResponse {
+	VirtualMachineRunCommandInstanceView InstanceView = 2;
+}
+
+service VirtualMachineAgent {
+	rpc CheckNotification(google.protobuf.Empty) returns (NotificationResponse) {}
+	rpc RunCommand(VirtualMachineRunCommandRequest) returns (VirtualMachineRunCommandResponse) {}
+}
