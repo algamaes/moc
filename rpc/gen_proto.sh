@@ -96,6 +96,16 @@ protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_guestagent_
 
 #### 
 
+Agent="hypervguestagent"
+echo "Generating Protoc for $Agent"
+Module="compute"
+echo "Generating $Module protoc"
+ChildModule="virtualmachine"
+echo "Generating $Module/$ChildModule protoc"
+protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_hypervguestagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
+
+####
+
 Agent="cloudagent"
 echo "Generating Protoc for $Agent"
 Module="admin"
