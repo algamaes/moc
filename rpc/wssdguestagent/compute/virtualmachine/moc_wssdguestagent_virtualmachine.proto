@@ -10,18 +10,29 @@ import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 import "moc_common_notification.proto";
 
+enum CertificateType {
+	Client = 0;
+	Server = 1;
+}
+
 message VirtualMachineRunCommandRequest {
-	VirtualMachineRunCommandScriptSource Source = 2;
-	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 3;
-	string RunAsUser = 4 [(sensitive) = true];
-	string RunAsPassword = 5 [(sensitive) = true];
+	VirtualMachineRunCommandScriptSource Source = 1;
+	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 2;
+	string RunAsUser = 3 [(sensitive) = true];
+	string RunAsPassword = 4 [(sensitive) = true];
+}
+
+message VirtualMachineCommandResultRequest{
+	string OperationID = 1;
 }
 
 message VirtualMachineRunCommandResponse {
-	VirtualMachineRunCommandInstanceView InstanceView = 2;
+	VirtualMachineRunCommandInstanceView InstanceView = 1;
+	string OperationID = 2;
 }
 
 service VirtualMachineAgent {
 	rpc CheckNotification(google.protobuf.Empty) returns (NotificationResponse) {}
 	rpc RunCommand(VirtualMachineRunCommandRequest) returns (VirtualMachineRunCommandResponse) {}
+	rpc GetCommandResult(VirtualMachineCommandResultRequest) returns (VirtualMachineRunCommandResponse) {}
 }
