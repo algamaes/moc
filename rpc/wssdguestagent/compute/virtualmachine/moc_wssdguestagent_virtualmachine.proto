@@ -10,11 +10,6 @@ import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 import "moc_common_notification.proto";
 
-enum CertificateType {
-	Client = 0;
-	Server = 1;
-}
-
 message VirtualMachineRunCommandRequest {
 	VirtualMachineRunCommandScriptSource Source = 1;
 	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 2;
