@@ -13,11 +13,12 @@ import "moc_common_notification.proto";
 message VirtualMachineRunCommandRequest {
 	VirtualMachineRunCommandScriptSource Source = 1;
 	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 2;
-	string RunAsUser = 3 [(sensitive) = true];
-	string RunAsPassword = 4 [(sensitive) = true];
+	string OperationID = 3;
+	string RunAsUser = 4 [(sensitive) = true];
+	string RunAsPassword = 5 [(sensitive) = true];
 }
 
-message VirtualMachineCommandResultRequest{
+message VirtualMachineCommandResultRequest {
 	string OperationID = 1;
 }
 
