@@ -35,13 +35,14 @@ message VirtualMachineRunCommandRequest {
 	VirtualMachine VirtualMachine = 1;
 	VirtualMachineRunCommandScriptSource Source = 2;
 	repeated VirtualMachineRunCommandInputParameter RunCommandInputParameters = 3;
-	string RunAsUser = 4 [(sensitive) = true];
-	string RunAsPassword = 5 [(sensitive) = true];
+	string OperationID = 4;
+	string RunAsUser = 5 [(sensitive) = true];
+	string RunAsPassword = 6 [(sensitive) = true];
 }
 
 message VirtualMachineRunCommandResponse {
-	VirtualMachine VirtualMachine = 1;
-	VirtualMachineRunCommandInstanceView InstanceView = 2;
+	VirtualMachineRunCommandInstanceView InstanceView = 1;
+	string OperationID = 2;
 }
 
 message VirtualMachineCommandResultRequest{
