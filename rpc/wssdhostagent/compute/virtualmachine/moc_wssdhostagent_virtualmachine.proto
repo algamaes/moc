@@ -16,7 +16,7 @@ message VirtualMachine {
 }
 
 message RegisterVirtualMachineRequest {
-	VirtualMachine VirtualMachine = 1;
+	string VirtualMachineId = 1;
 }
 
 message RegisterVirtualMachineResponse {
@@ -24,7 +24,7 @@ message RegisterVirtualMachineResponse {
 }
 
 message DeregisterVirtualMachineRequest {
-	VirtualMachine VirtualMachine = 1;
+	string VirtualMachineId = 1;
 }
 
 message DeregisterVirtualMachineResponse {
