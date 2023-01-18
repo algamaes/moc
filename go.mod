@@ -8,6 +8,7 @@ require (
 	github.com/hectane/go-acl v0.0.0-20190604041725-da78bae5fc95
 	github.com/jmespath/go-jmespath v0.3.0
 	github.com/kr/pretty v0.1.0 // indirect
+	github.com/microsoft/wmi v0.2.12
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.5.1
 	golang.org/x/net v0.0.0-20220927171203-f486391704dc // indirect
