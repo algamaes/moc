@@ -7,6 +7,7 @@ option go_package = "github.com/microsoft/moc/rpc/nodeagent/compute";
 package moc.nodeagent.compute;
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
 import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 import "moc_common_notification.proto";
@@ -88,6 +89,11 @@ message HardwareConfiguration {
 	DynamicMemoryConfiguration dynamicMemoryConfiguration = 3;
 }
 
+message GuestAgentConfiguration {
+	bool enabled = 1;
+	google.protobuf.Timestamp acceptExpiredCertUntil = 2;
+}
+
 message UefiSettings {
 	bool secureBootEnabled = 1;
 }
@@ -95,6 +101,11 @@ message UefiSettings {
 message SecurityConfiguration {
 	bool enableTPM = 1;
 	UefiSettings uefiSettings = 2;
+}
+
+message GuestAgentStatus {
+	AgentHealthState health = 1;
+	string version = 2;
 }
 
 message VirtualMachine {
@@ -112,6 +123,8 @@ message VirtualMachine {
 	Entity entity = 12;
 	HighAvailabilityState highAvailabilityState = 13;
 	Tags tags = 14;
+	GuestAgentConfiguration guestAgent = 15;
+	GuestAgentStatus guestAgentStatus = 16;
 }
 
 message VirtualMachineOperationRequest {
