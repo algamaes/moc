@@ -6,7 +6,6 @@ option go_package = "github.com/microsoft/moc/rpc/cloudagent/compute";
 package moc.cloudagent.compute;
 
 import "google/protobuf/wrappers.proto";
-import "google/protobuf/timestamp.proto";
 import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 
@@ -95,7 +94,6 @@ message HardwareConfiguration {
 
 message GuestAgentConfiguration {
 	bool enabled = 1;
-	google.protobuf.Timestamp acceptExpiredCertUntil = 2;
 }
 
 message UefiSettings {
