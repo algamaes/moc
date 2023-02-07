@@ -7,7 +7,6 @@ option go_package = "github.com/microsoft/moc/rpc/nodeagent/compute";
 package moc.nodeagent.compute;
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
-import "google/protobuf/timestamp.proto";
 import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 import "moc_common_notification.proto";
@@ -91,7 +90,6 @@ message HardwareConfiguration {
 
 message GuestAgentConfiguration {
 	bool enabled = 1;
-	google.protobuf.Timestamp acceptExpiredCertUntil = 2;
 }
 
 message UefiSettings {
