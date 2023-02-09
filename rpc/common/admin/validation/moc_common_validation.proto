@@ -20,4 +20,3 @@ message ValidationResponse {
 service ValidationAgent {
 	rpc Invoke(ValidationRequest) returns (ValidationResponse) {}
 }
-

@@ -96,10 +96,9 @@ Agent="wssdhostagent"
 echo "Generating Protoc for $Agent"
 
 Module="admin"
-echo "Generating $Module protoc"
-ChildModule="exec"
-echo "Generating $Module/$ChildModule protoc"
-protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_wssdhostagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
+echo "Generating $Agent/$Module protoc"
+protoc -I $Agent/$Module/exec -I ./common $Agent/$Module/exec/moc_wssdhostagent_exec.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/credentialmonitor -I ./common $Agent/$Module/credentialmonitor/moc_wssdhostagent_credentialmonitor.proto  --go_out=plugins=grpc:../bld/gen/
 
 # Generate compute agent protoc
 Module="compute"
