@@ -27,15 +27,17 @@ enum HostState {
 }
 
 message Host {
-	string fqdn = 1; 
-	Status status = 2;
-	string locationName = 3; 
-	string certificate = 4 [(sensitive) = true];
-	int32  port = 5;
-	int32  authorizerPort = 6;
-	HostState runningState = 7;
-	Tags tags = 8;
-} 
+	string name = 1;
+	string id = 2;
+	string fqdn = 3; 
+	Status status = 4;
+	string locationName = 5; 
+	string certificate = 6 [(sensitive) = true];
+	int32  port = 7;
+	int32  authorizerPort = 8;
+	HostState runningState = 9;
+	Tags tags = 10;
+}
 
 service WssdHostAgent {
 	rpc Invoke(HostRequest) returns (HostResponse) {}
