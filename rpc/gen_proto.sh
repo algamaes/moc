@@ -18,6 +18,7 @@ protoc -I common common/admin/debug/moc_common_debug.proto --go_out=plugins=grpc
 protoc -I common common/admin/logging/moc_common_logging.proto --go_out=plugins=grpc:../bld/gen/
 protoc -I common common/admin/health/moc_common_health.proto --go_out=plugins=grpc:../bld/gen/
 protoc -I common common/admin/recovery/moc_common_recovery.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I common common/admin/validation/moc_common_validation.proto --go_out=plugins=grpc:../bld/gen/
 protoc -I common common/admin/version/moc_common_version.proto --go_out=plugins=grpc:../bld/gen/
 protoc -I common common/moc_common_notification.proto --go_out=plugins=grpc:../bld/gen/
 protoc -I common common/moc_common_security.proto --go_out=plugins=grpc:../bld/gen/
@@ -94,10 +95,9 @@ Agent="wssdhostagent"
 echo "Generating Protoc for $Agent"
 
 Module="admin"
-echo "Generating $Module protoc"
-ChildModule="exec"
-echo "Generating $Module/$ChildModule protoc"
-protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_wssdhostagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
+echo "Generating $Agent/$Module protoc"
+protoc -I $Agent/$Module/exec -I ./common $Agent/$Module/exec/moc_wssdhostagent_exec.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/credentialmonitor -I ./common $Agent/$Module/credentialmonitor/moc_wssdhostagent_credentialmonitor.proto  --go_out=plugins=grpc:../bld/gen/
 
 # Generate compute agent protoc
 Module="compute"
