@@ -108,11 +108,6 @@ message SecurityConfiguration {
 	UefiSettings uefiSettings = 2;
 }
 
-message GuestAgentStatus {
-	AgentHealthState health = 1;
-	string version = 2;
-}
-
 message VirtualMachine {
 	string name = 1;
 	string id = 2;
@@ -129,7 +124,6 @@ message VirtualMachine {
 	HighAvailabilityState highAvailabilityState = 13;
 	Tags tags = 14;
 	GuestAgentConfiguration guestAgent = 15;
-	GuestAgentStatus guestAgentStatus = 16;
 }
 
 message VirtualMachineOperationRequest {
