@@ -31,6 +31,11 @@ message Identity {
 	Tags tags = 9;
 	int64 tokenExpiry = 13;
 	ClientType clientType = 14;
+	string hostFqdn = 15;
+	int32 hostPort = 16;
+	int32 hostAuthPort = 17;
+	AuthenticationType authType = 18;
+	bool revoked = 19;
 }
 
 service IdentityAgent {
