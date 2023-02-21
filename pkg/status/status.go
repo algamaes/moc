@@ -19,6 +19,7 @@ func InitStatus() *common.Status {
 		LastError:          &common.Error{},
 		Version:            GenerateVersion(),
 		DownloadStatus:     &common.DownloadStatus{},
+		ValidationStatus:   &common.ValidationStatus{},
 	}
 }
 
@@ -84,6 +85,15 @@ func SetDownloadStatus(s *common.Status, dProgressPercentage, dDownloadSizeInByt
 	if len(err) > 0 {
 		SetError(s, err[0])
 	}
+}
+
+func SetValidationStatus(s *common.Status, validationState []*common.ValidationState) {
+	s.ValidationStatus = new(common.ValidationStatus)
+	s.ValidationStatus.ValidationState = validationState
+}
+
+func GetValidationStatus(s *common.Status) []*common.ValidationState {
+	return s.GetValidationStatus().GetValidationState()
 }
 
 // GetStatuses - converts status to map
