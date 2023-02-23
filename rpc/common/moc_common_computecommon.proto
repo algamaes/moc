@@ -157,11 +157,3 @@ enum Architecture {
 	x64 = 9;
 	ARM64_Architecture = 12;
 }
-
-enum AgentHealthState {
-	AgentHealth_UNKNOWN = 0;
-	AgentHealth_OK = 1;
-	AgentHealth_UNKNOWN_ERROR = 2;
-	AgentHealth_CERT_EXPIRED = 3;
-	AgentHealth_CONNECTION_FAILED = 4;
-}
