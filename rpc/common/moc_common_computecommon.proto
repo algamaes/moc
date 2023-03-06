@@ -162,10 +162,3 @@ enum Architecture {
 extend google.protobuf.FieldOptions {
 	bool sensitivecompute = 50002;
 }
-enum AgentHealthState {
-	AgentHealth_UNKNOWN = 0;
-	AgentHealth_OK = 1;
-	AgentHealth_UNKNOWN_ERROR = 2;
-	AgentHealth_CERT_EXPIRED = 3;
-	AgentHealth_CONNECTION_FAILED = 4;
-}
