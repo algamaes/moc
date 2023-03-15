@@ -92,26 +92,26 @@ protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_ipaddress_$
 
 #### 
 
-Agent="wssdhostagent"
+Agent="hostagent"
 echo "Generating Protoc for $Agent"
 
 Module="admin"
 echo "Generating $Agent/$Module protoc"
-protoc -I $Agent/$Module/exec -I ./common $Agent/$Module/exec/moc_wssdhostagent_exec.proto --go_out=plugins=grpc:../bld/gen/
-protoc -I $Agent/$Module/credentialmonitor -I ./common $Agent/$Module/credentialmonitor/moc_wssdhostagent_credentialmonitor.proto  --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/exec -I ./common $Agent/$Module/exec/moc_hostagent_exec.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/credentialmonitor -I ./common $Agent/$Module/credentialmonitor/moc_hostagent_credentialmonitor.proto  --go_out=plugins=grpc:../bld/gen/
 
 # Generate compute agent protoc
 Module="compute"
 echo "Generating $Agent/$Module protoc"
-protoc -I $Agent/$Module/virtualmachine -I ./common $Agent/$Module/virtualmachine/moc_wssdhostagent_virtualmachine.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/virtualmachine -I ./common $Agent/$Module/virtualmachine/moc_hostagent_virtualmachine.proto --go_out=plugins=grpc:../bld/gen/
 
 Module="security"
 echo "Generating $Agent/$Module protoc"
-protoc -I $Agent/$Module/identity -I ./common $Agent/$Module/identity/moc_wssdhostagent_identity.proto --go_out=plugins=grpc:../bld/gen/
-protoc -I $Agent/$Module/keyvault/secret -I ./common $Agent/$Module/keyvault/secret/moc_wssdhostagent_secret.proto  --go_out=plugins=grpc:../bld/gen/
-protoc -I $Agent/$Module/keyvault -I ./common -I $Agent/$Module/keyvault/secret $Agent/$Module/keyvault/moc_wssdhostagent_keyvault.proto  --go_out=plugins=grpc:../bld/gen/
-protoc -I $Agent/$Module/authentication -I ./common -I $Agent/$Module/identity $Agent/$Module/authentication/moc_wssdhostagent_authentication.proto --go_out=plugins=grpc:../bld/gen/
-protoc -I $Agent/$Module/certificate -I ./common -I $Agent/$Module/certificate $Agent/$Module/certificate/moc_wssdhostagent_certificate.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/identity -I ./common $Agent/$Module/identity/moc_hostagent_identity.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/keyvault/secret -I ./common $Agent/$Module/keyvault/secret/moc_hostagent_secret.proto  --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/keyvault -I ./common -I $Agent/$Module/keyvault/secret $Agent/$Module/keyvault/moc_hostagent_keyvault.proto  --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/authentication -I ./common -I $Agent/$Module/identity $Agent/$Module/authentication/moc_hostagent_authentication.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module/certificate -I ./common -I $Agent/$Module/certificate $Agent/$Module/certificate/moc_hostagent_certificate.proto --go_out=plugins=grpc:../bld/gen/
 
 #### 
 
