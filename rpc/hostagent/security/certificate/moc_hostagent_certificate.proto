@@ -2,8 +2,8 @@
 // Licensed under the Apache v2.0 license.
 
 syntax = "proto3";
-option go_package = "github.com/microsoft/moc/rpc/wssdhostagent/security";
-package moc.wssdhostagent.security;
+option go_package = "github.com/microsoft/moc/rpc/hostagent/security";
+package moc.hostagent.security;
 import "google/protobuf/wrappers.proto";
 import "moc_common_common.proto";
 
