@@ -125,13 +125,13 @@ protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_guestagent_
 
 #### 
 
-Agent="wssdguestagent"
+Agent="mocguestagent"
 echo "Generating Protoc for $Agent"
 Module="compute"
 echo "Generating $Module protoc"
 ChildModule="virtualmachine"
 echo "Generating $Module/$ChildModule protoc"
-protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_wssdguestagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
+protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_mocguestagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
 
 ####
 
