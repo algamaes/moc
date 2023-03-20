@@ -2,8 +2,8 @@
 // Licensed under the Apache v2.0 license.
 
 syntax = "proto3";
-option go_package = "github.com/microsoft/moc/rpc/wssdguestagent/compute";
-package moc.wssdguestagent.compute;
+option go_package = "github.com/microsoft/moc/rpc/mocguestagent/compute";
+package moc.mocguestagent.compute;
 
 import "google/protobuf/empty.proto";
 import "moc_common_common.proto";
