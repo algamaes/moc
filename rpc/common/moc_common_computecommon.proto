@@ -144,6 +144,19 @@ message VirtualMachineRunCommandInstanceView {
 	string Error = 4;
 }
 
+message InstanceViewStatus {
+	string code = 1;
+	string level = 2;
+	string displayStatus = 3;
+	string message = 4;
+	string time = 5;
+}
+
+message VirtualMachineAgentInstanceView {
+	string vmAgentVersion = 1;
+	repeated InstanceViewStatus statuses = 3;
+}
+
 /* Values fetched from Win32_Processor class.
 Documentation here:
 https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor#properties */

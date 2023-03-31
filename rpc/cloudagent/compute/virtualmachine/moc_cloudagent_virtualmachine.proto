@@ -123,6 +123,7 @@ message VirtualMachine {
 	SecurityConfiguration security = 15;
 	Tags tags = 16;
 	GuestAgentConfiguration guestAgent = 17;
+	VirtualMachineAgentInstanceView guestAgentInstanceView = 18;
 }
 
 message VirtualMachineOperationRequest {
