@@ -8,15 +8,13 @@ package moc.mochostagent.compute;
 import "moc_common_common.proto";
 import "moc_common_computecommon.proto";
 
-message VirtualMachine {
-	string name = 1;
-	string id = 2;
-	Entity entity = 3;
-	Tags tags = 4;
-}
-
 message RegisterVirtualMachineRequest {
 	string VirtualMachineId = 1;
+}
+
+message RegisterVirtualMachineInstanceView {
+	string Output = 1;
+	string Error = 2;
 }
 
 message RegisterVirtualMachineResponse {
@@ -27,8 +25,20 @@ message DeregisterVirtualMachineRequest {
 	string VirtualMachineId = 1;
 }
 
+message DeregisterVirtualMachineInstanceView {
+	string Output = 1;
+	string Error = 2;
+}
+
 message DeregisterVirtualMachineResponse {
 	DeregisterVirtualMachineInstanceView InstanceView = 1;
+}
+
+message VirtualMachine {
+	string name = 1;
+	string id = 2;
+	Entity entity = 3;
+	Tags tags = 4;
 }
 
 message VirtualMachineRunCommandRequest {
