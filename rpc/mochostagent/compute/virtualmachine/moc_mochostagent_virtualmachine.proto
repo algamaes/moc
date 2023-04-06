@@ -39,6 +39,7 @@ message VirtualMachine {
 	string id = 2;
 	Entity entity = 3;
 	Tags tags = 4;
+	VirtualMachineAgentInstanceView guestAgentInstanceView = 5;
 }
 
 message VirtualMachineRunCommandRequest {

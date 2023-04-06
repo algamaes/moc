@@ -124,6 +124,7 @@ message VirtualMachine {
 	HighAvailabilityState highAvailabilityState = 13;
 	Tags tags = 14;
 	GuestAgentConfiguration guestAgent = 15;
+	VirtualMachineAgentInstanceView guestAgentInstanceView = 16;
 }
 
 message VirtualMachineOperationRequest {
