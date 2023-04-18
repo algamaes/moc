@@ -29,7 +29,7 @@ message VirtualMachineRunCommandResponse {
 }
 
 message UpdateAgentRequest{
-	string AgentPath = 1;
+	bytes AgentBinary = 1;
 }
 
 message UpdateAgentResponse{
