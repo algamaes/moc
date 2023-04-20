@@ -10,6 +10,7 @@ import "moc_common_computecommon.proto";
 
 message RegisterVirtualMachineRequest {
 	VirtualMachine VirtualMachine = 1;
+	bool waitForConnection = 2;
 }
 
 message RegisterVirtualMachineInstanceView {
