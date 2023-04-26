@@ -133,6 +133,13 @@ ChildModule="virtualmachine"
 echo "Generating $Module/$ChildModule protoc"
 protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_mocguestagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
 
+Module="security"
+echo "Generating $Module protoc"
+ChildModule="certificate"
+echo "Generating $Module/$ChildModule protoc"
+protoc -I $Agent/$Module -I ./common $Agent/$Module/$ChildModule/moc_mocguestagent_${ChildModule}.proto --go_out=plugins=grpc:../bld/gen/
+
+
 ####
 
 Agent="cloudagent"
