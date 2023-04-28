@@ -30,6 +30,7 @@ message Certificate {
     string locationName = 9;
     Tags tags = 10;
 }
+
 message CSRRequest {
 	repeated CertificateSigningRequest CSRs = 1;
 }
@@ -46,7 +47,13 @@ message CertificateSigningRequest {
     int64 validity = 9;
 }
 
+message RenewCSRResponse {
+    CertificateSigningRequest csr = 1;
+    google.protobuf.BoolValue Result = 2;
+    string Error = 3;
+}
+
 service CertificateAgent {
-    rpc GetRenewCSR(google.protobuf.Empty) returns (CertificateResponse) {}
+    rpc GetRenewCSR(google.protobuf.Empty) returns (RenewCSRResponse) {}
 	rpc RotateCertificate(CertificateRequest) returns (CertificateResponse) {}
 }
