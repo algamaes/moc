@@ -28,7 +28,8 @@ message Certificate {
     string groupName = 7;
     string vaultName = 8;
     string locationName = 9;
-    Tags tags = 10;
+    Entity entity = 10;
+    Tags tags = 11;
 }
 message CSRRequest {
 	repeated CertificateSigningRequest CSRs = 1;
