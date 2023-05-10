@@ -59,7 +59,7 @@ message VirtualMachineRunCommandRequest {
 	string RunAsUser = 5 [(sensitive) = true];
 	string RunAsPassword = 6 [(sensitive) = true];
 }
- 
+
 message VirtualMachineRunCommandResponse {
 	VirtualMachineRunCommandInstanceView InstanceView = 1;
 	string OperationID = 2;
