@@ -65,10 +65,6 @@ message VirtualMachineRunCommandResponse {
 	string OperationID = 2;
 }
 
-message VirtualMachineCommandResultRequest{
-	string OperationID = 1;
-}
-
 message VirtualMachineRepairGuestAgentRequest {
 	VirtualMachine VirtualMachine = 1;
 }
