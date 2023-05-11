@@ -27,264 +27,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type RegisterVirtualMachineRequest struct {
-	VirtualMachine       *VirtualMachine `protobuf:"bytes,1,opt,name=VirtualMachine,proto3" json:"VirtualMachine,omitempty"`
-	WaitForConnection    bool            `protobuf:"varint,2,opt,name=waitForConnection,proto3" json:"waitForConnection,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
-	XXX_unrecognized     []byte          `json:"-"`
-	XXX_sizecache        int32           `json:"-"`
-}
-
-func (m *RegisterVirtualMachineRequest) Reset()         { *m = RegisterVirtualMachineRequest{} }
-func (m *RegisterVirtualMachineRequest) String() string { return proto.CompactTextString(m) }
-func (*RegisterVirtualMachineRequest) ProtoMessage()    {}
-func (*RegisterVirtualMachineRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{0}
-}
-
-func (m *RegisterVirtualMachineRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RegisterVirtualMachineRequest.Unmarshal(m, b)
-}
-func (m *RegisterVirtualMachineRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RegisterVirtualMachineRequest.Marshal(b, m, deterministic)
-}
-func (m *RegisterVirtualMachineRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RegisterVirtualMachineRequest.Merge(m, src)
-}
-func (m *RegisterVirtualMachineRequest) XXX_Size() int {
-	return xxx_messageInfo_RegisterVirtualMachineRequest.Size(m)
-}
-func (m *RegisterVirtualMachineRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RegisterVirtualMachineRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RegisterVirtualMachineRequest proto.InternalMessageInfo
-
-func (m *RegisterVirtualMachineRequest) GetVirtualMachine() *VirtualMachine {
-	if m != nil {
-		return m.VirtualMachine
-	}
-	return nil
-}
-
-func (m *RegisterVirtualMachineRequest) GetWaitForConnection() bool {
-	if m != nil {
-		return m.WaitForConnection
-	}
-	return false
-}
-
-type RegisterVirtualMachineInstanceView struct {
-	Output               string   `protobuf:"bytes,1,opt,name=Output,proto3" json:"Output,omitempty"`
-	Error                string   `protobuf:"bytes,2,opt,name=Error,proto3" json:"Error,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RegisterVirtualMachineInstanceView) Reset()         { *m = RegisterVirtualMachineInstanceView{} }
-func (m *RegisterVirtualMachineInstanceView) String() string { return proto.CompactTextString(m) }
-func (*RegisterVirtualMachineInstanceView) ProtoMessage()    {}
-func (*RegisterVirtualMachineInstanceView) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{1}
-}
-
-func (m *RegisterVirtualMachineInstanceView) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Unmarshal(m, b)
-}
-func (m *RegisterVirtualMachineInstanceView) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Marshal(b, m, deterministic)
-}
-func (m *RegisterVirtualMachineInstanceView) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RegisterVirtualMachineInstanceView.Merge(m, src)
-}
-func (m *RegisterVirtualMachineInstanceView) XXX_Size() int {
-	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Size(m)
-}
-func (m *RegisterVirtualMachineInstanceView) XXX_DiscardUnknown() {
-	xxx_messageInfo_RegisterVirtualMachineInstanceView.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RegisterVirtualMachineInstanceView proto.InternalMessageInfo
-
-func (m *RegisterVirtualMachineInstanceView) GetOutput() string {
-	if m != nil {
-		return m.Output
-	}
-	return ""
-}
-
-func (m *RegisterVirtualMachineInstanceView) GetError() string {
-	if m != nil {
-		return m.Error
-	}
-	return ""
-}
-
-type RegisterVirtualMachineResponse struct {
-	InstanceView         *RegisterVirtualMachineInstanceView `protobuf:"bytes,1,opt,name=InstanceView,proto3" json:"InstanceView,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                            `json:"-"`
-	XXX_unrecognized     []byte                              `json:"-"`
-	XXX_sizecache        int32                               `json:"-"`
-}
-
-func (m *RegisterVirtualMachineResponse) Reset()         { *m = RegisterVirtualMachineResponse{} }
-func (m *RegisterVirtualMachineResponse) String() string { return proto.CompactTextString(m) }
-func (*RegisterVirtualMachineResponse) ProtoMessage()    {}
-func (*RegisterVirtualMachineResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{2}
-}
-
-func (m *RegisterVirtualMachineResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RegisterVirtualMachineResponse.Unmarshal(m, b)
-}
-func (m *RegisterVirtualMachineResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RegisterVirtualMachineResponse.Marshal(b, m, deterministic)
-}
-func (m *RegisterVirtualMachineResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RegisterVirtualMachineResponse.Merge(m, src)
-}
-func (m *RegisterVirtualMachineResponse) XXX_Size() int {
-	return xxx_messageInfo_RegisterVirtualMachineResponse.Size(m)
-}
-func (m *RegisterVirtualMachineResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RegisterVirtualMachineResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RegisterVirtualMachineResponse proto.InternalMessageInfo
-
-func (m *RegisterVirtualMachineResponse) GetInstanceView() *RegisterVirtualMachineInstanceView {
-	if m != nil {
-		return m.InstanceView
-	}
-	return nil
-}
-
-type DeregisterVirtualMachineRequest struct {
-	VirtualMachineId     string   `protobuf:"bytes,1,opt,name=VirtualMachineId,proto3" json:"VirtualMachineId,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DeregisterVirtualMachineRequest) Reset()         { *m = DeregisterVirtualMachineRequest{} }
-func (m *DeregisterVirtualMachineRequest) String() string { return proto.CompactTextString(m) }
-func (*DeregisterVirtualMachineRequest) ProtoMessage()    {}
-func (*DeregisterVirtualMachineRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{3}
-}
-
-func (m *DeregisterVirtualMachineRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DeregisterVirtualMachineRequest.Unmarshal(m, b)
-}
-func (m *DeregisterVirtualMachineRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DeregisterVirtualMachineRequest.Marshal(b, m, deterministic)
-}
-func (m *DeregisterVirtualMachineRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeregisterVirtualMachineRequest.Merge(m, src)
-}
-func (m *DeregisterVirtualMachineRequest) XXX_Size() int {
-	return xxx_messageInfo_DeregisterVirtualMachineRequest.Size(m)
-}
-func (m *DeregisterVirtualMachineRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeregisterVirtualMachineRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeregisterVirtualMachineRequest proto.InternalMessageInfo
-
-func (m *DeregisterVirtualMachineRequest) GetVirtualMachineId() string {
-	if m != nil {
-		return m.VirtualMachineId
-	}
-	return ""
-}
-
-type DeregisterVirtualMachineInstanceView struct {
-	Output               string   `protobuf:"bytes,1,opt,name=Output,proto3" json:"Output,omitempty"`
-	Error                string   `protobuf:"bytes,2,opt,name=Error,proto3" json:"Error,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DeregisterVirtualMachineInstanceView) Reset()         { *m = DeregisterVirtualMachineInstanceView{} }
-func (m *DeregisterVirtualMachineInstanceView) String() string { return proto.CompactTextString(m) }
-func (*DeregisterVirtualMachineInstanceView) ProtoMessage()    {}
-func (*DeregisterVirtualMachineInstanceView) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{4}
-}
-
-func (m *DeregisterVirtualMachineInstanceView) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Unmarshal(m, b)
-}
-func (m *DeregisterVirtualMachineInstanceView) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Marshal(b, m, deterministic)
-}
-func (m *DeregisterVirtualMachineInstanceView) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeregisterVirtualMachineInstanceView.Merge(m, src)
-}
-func (m *DeregisterVirtualMachineInstanceView) XXX_Size() int {
-	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Size(m)
-}
-func (m *DeregisterVirtualMachineInstanceView) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeregisterVirtualMachineInstanceView.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeregisterVirtualMachineInstanceView proto.InternalMessageInfo
-
-func (m *DeregisterVirtualMachineInstanceView) GetOutput() string {
-	if m != nil {
-		return m.Output
-	}
-	return ""
-}
-
-func (m *DeregisterVirtualMachineInstanceView) GetError() string {
-	if m != nil {
-		return m.Error
-	}
-	return ""
-}
-
-type DeregisterVirtualMachineResponse struct {
-	InstanceView         *DeregisterVirtualMachineInstanceView `protobuf:"bytes,1,opt,name=InstanceView,proto3" json:"InstanceView,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                              `json:"-"`
-	XXX_unrecognized     []byte                                `json:"-"`
-	XXX_sizecache        int32                                 `json:"-"`
-}
-
-func (m *DeregisterVirtualMachineResponse) Reset()         { *m = DeregisterVirtualMachineResponse{} }
-func (m *DeregisterVirtualMachineResponse) String() string { return proto.CompactTextString(m) }
-func (*DeregisterVirtualMachineResponse) ProtoMessage()    {}
-func (*DeregisterVirtualMachineResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{5}
-}
-
-func (m *DeregisterVirtualMachineResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DeregisterVirtualMachineResponse.Unmarshal(m, b)
-}
-func (m *DeregisterVirtualMachineResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DeregisterVirtualMachineResponse.Marshal(b, m, deterministic)
-}
-func (m *DeregisterVirtualMachineResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeregisterVirtualMachineResponse.Merge(m, src)
-}
-func (m *DeregisterVirtualMachineResponse) XXX_Size() int {
-	return xxx_messageInfo_DeregisterVirtualMachineResponse.Size(m)
-}
-func (m *DeregisterVirtualMachineResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeregisterVirtualMachineResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeregisterVirtualMachineResponse proto.InternalMessageInfo
-
-func (m *DeregisterVirtualMachineResponse) GetInstanceView() *DeregisterVirtualMachineInstanceView {
-	if m != nil {
-		return m.InstanceView
-	}
-	return nil
-}
-
 type OperatingSystemConfiguration struct {
 	Ostype               common.OperatingSystemType `protobuf:"varint,1,opt,name=ostype,proto3,enum=moc.OperatingSystemType" json:"ostype,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
@@ -296,7 +38,7 @@ func (m *OperatingSystemConfiguration) Reset()         { *m = OperatingSystemCon
 func (m *OperatingSystemConfiguration) String() string { return proto.CompactTextString(m) }
 func (*OperatingSystemConfiguration) ProtoMessage()    {}
 func (*OperatingSystemConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{6}
+	return fileDescriptor_1e2b9c6e6135d476, []int{0}
 }
 
 func (m *OperatingSystemConfiguration) XXX_Unmarshal(b []byte) error {
@@ -340,7 +82,7 @@ func (m *VirtualMachine) Reset()         { *m = VirtualMachine{} }
 func (m *VirtualMachine) String() string { return proto.CompactTextString(m) }
 func (*VirtualMachine) ProtoMessage()    {}
 func (*VirtualMachine) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{7}
+	return fileDescriptor_1e2b9c6e6135d476, []int{1}
 }
 
 func (m *VirtualMachine) XXX_Unmarshal(b []byte) error {
@@ -403,6 +145,319 @@ func (m *VirtualMachine) GetGuestAgentInstanceView() *common.VirtualMachineAgent
 	return nil
 }
 
+type GetVirtualMachineResponse struct {
+	VirtualMachine       *VirtualMachine     `protobuf:"bytes,1,opt,name=VirtualMachine,proto3" json:"VirtualMachine,omitempty"`
+	Result               *wrappers.BoolValue `protobuf:"bytes,2,opt,name=Result,proto3" json:"Result,omitempty"`
+	Error                string              `protobuf:"bytes,3,opt,name=Error,proto3" json:"Error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
+}
+
+func (m *GetVirtualMachineResponse) Reset()         { *m = GetVirtualMachineResponse{} }
+func (m *GetVirtualMachineResponse) String() string { return proto.CompactTextString(m) }
+func (*GetVirtualMachineResponse) ProtoMessage()    {}
+func (*GetVirtualMachineResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{2}
+}
+
+func (m *GetVirtualMachineResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetVirtualMachineResponse.Unmarshal(m, b)
+}
+func (m *GetVirtualMachineResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetVirtualMachineResponse.Marshal(b, m, deterministic)
+}
+func (m *GetVirtualMachineResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetVirtualMachineResponse.Merge(m, src)
+}
+func (m *GetVirtualMachineResponse) XXX_Size() int {
+	return xxx_messageInfo_GetVirtualMachineResponse.Size(m)
+}
+func (m *GetVirtualMachineResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetVirtualMachineResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetVirtualMachineResponse proto.InternalMessageInfo
+
+func (m *GetVirtualMachineResponse) GetVirtualMachine() *VirtualMachine {
+	if m != nil {
+		return m.VirtualMachine
+	}
+	return nil
+}
+
+func (m *GetVirtualMachineResponse) GetResult() *wrappers.BoolValue {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
+func (m *GetVirtualMachineResponse) GetError() string {
+	if m != nil {
+		return m.Error
+	}
+	return ""
+}
+
+type RegisterVirtualMachineRequest struct {
+	VirtualMachine       *VirtualMachine `protobuf:"bytes,1,opt,name=VirtualMachine,proto3" json:"VirtualMachine,omitempty"`
+	WaitForConnection    bool            `protobuf:"varint,2,opt,name=waitForConnection,proto3" json:"waitForConnection,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
+}
+
+func (m *RegisterVirtualMachineRequest) Reset()         { *m = RegisterVirtualMachineRequest{} }
+func (m *RegisterVirtualMachineRequest) String() string { return proto.CompactTextString(m) }
+func (*RegisterVirtualMachineRequest) ProtoMessage()    {}
+func (*RegisterVirtualMachineRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{3}
+}
+
+func (m *RegisterVirtualMachineRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegisterVirtualMachineRequest.Unmarshal(m, b)
+}
+func (m *RegisterVirtualMachineRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegisterVirtualMachineRequest.Marshal(b, m, deterministic)
+}
+func (m *RegisterVirtualMachineRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegisterVirtualMachineRequest.Merge(m, src)
+}
+func (m *RegisterVirtualMachineRequest) XXX_Size() int {
+	return xxx_messageInfo_RegisterVirtualMachineRequest.Size(m)
+}
+func (m *RegisterVirtualMachineRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegisterVirtualMachineRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegisterVirtualMachineRequest proto.InternalMessageInfo
+
+func (m *RegisterVirtualMachineRequest) GetVirtualMachine() *VirtualMachine {
+	if m != nil {
+		return m.VirtualMachine
+	}
+	return nil
+}
+
+func (m *RegisterVirtualMachineRequest) GetWaitForConnection() bool {
+	if m != nil {
+		return m.WaitForConnection
+	}
+	return false
+}
+
+type RegisterVirtualMachineInstanceView struct {
+	Output               string   `protobuf:"bytes,1,opt,name=Output,proto3" json:"Output,omitempty"`
+	Error                string   `protobuf:"bytes,2,opt,name=Error,proto3" json:"Error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RegisterVirtualMachineInstanceView) Reset()         { *m = RegisterVirtualMachineInstanceView{} }
+func (m *RegisterVirtualMachineInstanceView) String() string { return proto.CompactTextString(m) }
+func (*RegisterVirtualMachineInstanceView) ProtoMessage()    {}
+func (*RegisterVirtualMachineInstanceView) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{4}
+}
+
+func (m *RegisterVirtualMachineInstanceView) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Unmarshal(m, b)
+}
+func (m *RegisterVirtualMachineInstanceView) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Marshal(b, m, deterministic)
+}
+func (m *RegisterVirtualMachineInstanceView) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegisterVirtualMachineInstanceView.Merge(m, src)
+}
+func (m *RegisterVirtualMachineInstanceView) XXX_Size() int {
+	return xxx_messageInfo_RegisterVirtualMachineInstanceView.Size(m)
+}
+func (m *RegisterVirtualMachineInstanceView) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegisterVirtualMachineInstanceView.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegisterVirtualMachineInstanceView proto.InternalMessageInfo
+
+func (m *RegisterVirtualMachineInstanceView) GetOutput() string {
+	if m != nil {
+		return m.Output
+	}
+	return ""
+}
+
+func (m *RegisterVirtualMachineInstanceView) GetError() string {
+	if m != nil {
+		return m.Error
+	}
+	return ""
+}
+
+type RegisterVirtualMachineResponse struct {
+	InstanceView         *RegisterVirtualMachineInstanceView `protobuf:"bytes,1,opt,name=InstanceView,proto3" json:"InstanceView,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                            `json:"-"`
+	XXX_unrecognized     []byte                              `json:"-"`
+	XXX_sizecache        int32                               `json:"-"`
+}
+
+func (m *RegisterVirtualMachineResponse) Reset()         { *m = RegisterVirtualMachineResponse{} }
+func (m *RegisterVirtualMachineResponse) String() string { return proto.CompactTextString(m) }
+func (*RegisterVirtualMachineResponse) ProtoMessage()    {}
+func (*RegisterVirtualMachineResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{5}
+}
+
+func (m *RegisterVirtualMachineResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RegisterVirtualMachineResponse.Unmarshal(m, b)
+}
+func (m *RegisterVirtualMachineResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RegisterVirtualMachineResponse.Marshal(b, m, deterministic)
+}
+func (m *RegisterVirtualMachineResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RegisterVirtualMachineResponse.Merge(m, src)
+}
+func (m *RegisterVirtualMachineResponse) XXX_Size() int {
+	return xxx_messageInfo_RegisterVirtualMachineResponse.Size(m)
+}
+func (m *RegisterVirtualMachineResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RegisterVirtualMachineResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RegisterVirtualMachineResponse proto.InternalMessageInfo
+
+func (m *RegisterVirtualMachineResponse) GetInstanceView() *RegisterVirtualMachineInstanceView {
+	if m != nil {
+		return m.InstanceView
+	}
+	return nil
+}
+
+type DeregisterVirtualMachineRequest struct {
+	VirtualMachineId     string   `protobuf:"bytes,1,opt,name=VirtualMachineId,proto3" json:"VirtualMachineId,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeregisterVirtualMachineRequest) Reset()         { *m = DeregisterVirtualMachineRequest{} }
+func (m *DeregisterVirtualMachineRequest) String() string { return proto.CompactTextString(m) }
+func (*DeregisterVirtualMachineRequest) ProtoMessage()    {}
+func (*DeregisterVirtualMachineRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{6}
+}
+
+func (m *DeregisterVirtualMachineRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeregisterVirtualMachineRequest.Unmarshal(m, b)
+}
+func (m *DeregisterVirtualMachineRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeregisterVirtualMachineRequest.Marshal(b, m, deterministic)
+}
+func (m *DeregisterVirtualMachineRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeregisterVirtualMachineRequest.Merge(m, src)
+}
+func (m *DeregisterVirtualMachineRequest) XXX_Size() int {
+	return xxx_messageInfo_DeregisterVirtualMachineRequest.Size(m)
+}
+func (m *DeregisterVirtualMachineRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeregisterVirtualMachineRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeregisterVirtualMachineRequest proto.InternalMessageInfo
+
+func (m *DeregisterVirtualMachineRequest) GetVirtualMachineId() string {
+	if m != nil {
+		return m.VirtualMachineId
+	}
+	return ""
+}
+
+type DeregisterVirtualMachineInstanceView struct {
+	Output               string   `protobuf:"bytes,1,opt,name=Output,proto3" json:"Output,omitempty"`
+	Error                string   `protobuf:"bytes,2,opt,name=Error,proto3" json:"Error,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeregisterVirtualMachineInstanceView) Reset()         { *m = DeregisterVirtualMachineInstanceView{} }
+func (m *DeregisterVirtualMachineInstanceView) String() string { return proto.CompactTextString(m) }
+func (*DeregisterVirtualMachineInstanceView) ProtoMessage()    {}
+func (*DeregisterVirtualMachineInstanceView) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{7}
+}
+
+func (m *DeregisterVirtualMachineInstanceView) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Unmarshal(m, b)
+}
+func (m *DeregisterVirtualMachineInstanceView) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Marshal(b, m, deterministic)
+}
+func (m *DeregisterVirtualMachineInstanceView) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeregisterVirtualMachineInstanceView.Merge(m, src)
+}
+func (m *DeregisterVirtualMachineInstanceView) XXX_Size() int {
+	return xxx_messageInfo_DeregisterVirtualMachineInstanceView.Size(m)
+}
+func (m *DeregisterVirtualMachineInstanceView) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeregisterVirtualMachineInstanceView.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeregisterVirtualMachineInstanceView proto.InternalMessageInfo
+
+func (m *DeregisterVirtualMachineInstanceView) GetOutput() string {
+	if m != nil {
+		return m.Output
+	}
+	return ""
+}
+
+func (m *DeregisterVirtualMachineInstanceView) GetError() string {
+	if m != nil {
+		return m.Error
+	}
+	return ""
+}
+
+type DeregisterVirtualMachineResponse struct {
+	InstanceView         *DeregisterVirtualMachineInstanceView `protobuf:"bytes,1,opt,name=InstanceView,proto3" json:"InstanceView,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                              `json:"-"`
+	XXX_unrecognized     []byte                                `json:"-"`
+	XXX_sizecache        int32                                 `json:"-"`
+}
+
+func (m *DeregisterVirtualMachineResponse) Reset()         { *m = DeregisterVirtualMachineResponse{} }
+func (m *DeregisterVirtualMachineResponse) String() string { return proto.CompactTextString(m) }
+func (*DeregisterVirtualMachineResponse) ProtoMessage()    {}
+func (*DeregisterVirtualMachineResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1e2b9c6e6135d476, []int{8}
+}
+
+func (m *DeregisterVirtualMachineResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeregisterVirtualMachineResponse.Unmarshal(m, b)
+}
+func (m *DeregisterVirtualMachineResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeregisterVirtualMachineResponse.Marshal(b, m, deterministic)
+}
+func (m *DeregisterVirtualMachineResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeregisterVirtualMachineResponse.Merge(m, src)
+}
+func (m *DeregisterVirtualMachineResponse) XXX_Size() int {
+	return xxx_messageInfo_DeregisterVirtualMachineResponse.Size(m)
+}
+func (m *DeregisterVirtualMachineResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeregisterVirtualMachineResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeregisterVirtualMachineResponse proto.InternalMessageInfo
+
+func (m *DeregisterVirtualMachineResponse) GetInstanceView() *DeregisterVirtualMachineInstanceView {
+	if m != nil {
+		return m.InstanceView
+	}
+	return nil
+}
+
 type VirtualMachineRunCommandRequest struct {
 	VirtualMachine            *VirtualMachine                                  `protobuf:"bytes,1,opt,name=VirtualMachine,proto3" json:"VirtualMachine,omitempty"`
 	Source                    *common.VirtualMachineRunCommandScriptSource     `protobuf:"bytes,2,opt,name=Source,proto3" json:"Source,omitempty"`
@@ -419,7 +474,7 @@ func (m *VirtualMachineRunCommandRequest) Reset()         { *m = VirtualMachineR
 func (m *VirtualMachineRunCommandRequest) String() string { return proto.CompactTextString(m) }
 func (*VirtualMachineRunCommandRequest) ProtoMessage()    {}
 func (*VirtualMachineRunCommandRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{8}
+	return fileDescriptor_1e2b9c6e6135d476, []int{9}
 }
 
 func (m *VirtualMachineRunCommandRequest) XXX_Unmarshal(b []byte) error {
@@ -494,7 +549,7 @@ func (m *VirtualMachineRunCommandResponse) Reset()         { *m = VirtualMachine
 func (m *VirtualMachineRunCommandResponse) String() string { return proto.CompactTextString(m) }
 func (*VirtualMachineRunCommandResponse) ProtoMessage()    {}
 func (*VirtualMachineRunCommandResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{9}
+	return fileDescriptor_1e2b9c6e6135d476, []int{10}
 }
 
 func (m *VirtualMachineRunCommandResponse) XXX_Unmarshal(b []byte) error {
@@ -529,100 +584,6 @@ func (m *VirtualMachineRunCommandResponse) GetOperationID() string {
 	return ""
 }
 
-type GuestAgentInfoRequest struct {
-	VirtualMachineId     string   `protobuf:"bytes,1,opt,name=VirtualMachineId,proto3" json:"VirtualMachineId,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *GuestAgentInfoRequest) Reset()         { *m = GuestAgentInfoRequest{} }
-func (m *GuestAgentInfoRequest) String() string { return proto.CompactTextString(m) }
-func (*GuestAgentInfoRequest) ProtoMessage()    {}
-func (*GuestAgentInfoRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{10}
-}
-
-func (m *GuestAgentInfoRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GuestAgentInfoRequest.Unmarshal(m, b)
-}
-func (m *GuestAgentInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GuestAgentInfoRequest.Marshal(b, m, deterministic)
-}
-func (m *GuestAgentInfoRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GuestAgentInfoRequest.Merge(m, src)
-}
-func (m *GuestAgentInfoRequest) XXX_Size() int {
-	return xxx_messageInfo_GuestAgentInfoRequest.Size(m)
-}
-func (m *GuestAgentInfoRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GuestAgentInfoRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GuestAgentInfoRequest proto.InternalMessageInfo
-
-func (m *GuestAgentInfoRequest) GetVirtualMachineId() string {
-	if m != nil {
-		return m.VirtualMachineId
-	}
-	return ""
-}
-
-type GuestAgentInfoResponse struct {
-	Version              *common.Version    `protobuf:"bytes,1,opt,name=Version,proto3" json:"Version,omitempty"`
-	State                common.HealthState `protobuf:"varint,2,opt,name=State,proto3,enum=moc.HealthState" json:"State,omitempty"`
-	Error                string             `protobuf:"bytes,3,opt,name=Error,proto3" json:"Error,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-
-func (m *GuestAgentInfoResponse) Reset()         { *m = GuestAgentInfoResponse{} }
-func (m *GuestAgentInfoResponse) String() string { return proto.CompactTextString(m) }
-func (*GuestAgentInfoResponse) ProtoMessage()    {}
-func (*GuestAgentInfoResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{11}
-}
-
-func (m *GuestAgentInfoResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GuestAgentInfoResponse.Unmarshal(m, b)
-}
-func (m *GuestAgentInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GuestAgentInfoResponse.Marshal(b, m, deterministic)
-}
-func (m *GuestAgentInfoResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GuestAgentInfoResponse.Merge(m, src)
-}
-func (m *GuestAgentInfoResponse) XXX_Size() int {
-	return xxx_messageInfo_GuestAgentInfoResponse.Size(m)
-}
-func (m *GuestAgentInfoResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GuestAgentInfoResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GuestAgentInfoResponse proto.InternalMessageInfo
-
-func (m *GuestAgentInfoResponse) GetVersion() *common.Version {
-	if m != nil {
-		return m.Version
-	}
-	return nil
-}
-
-func (m *GuestAgentInfoResponse) GetState() common.HealthState {
-	if m != nil {
-		return m.State
-	}
-	return common.HealthState_NOTKNOWN
-}
-
-func (m *GuestAgentInfoResponse) GetError() string {
-	if m != nil {
-		return m.Error
-	}
-	return ""
-}
-
 type VirtualMachineRepairGuestAgentRequest struct {
 	VirtualMachine       *VirtualMachine `protobuf:"bytes,1,opt,name=VirtualMachine,proto3" json:"VirtualMachine,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
@@ -634,7 +595,7 @@ func (m *VirtualMachineRepairGuestAgentRequest) Reset()         { *m = VirtualMa
 func (m *VirtualMachineRepairGuestAgentRequest) String() string { return proto.CompactTextString(m) }
 func (*VirtualMachineRepairGuestAgentRequest) ProtoMessage()    {}
 func (*VirtualMachineRepairGuestAgentRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{12}
+	return fileDescriptor_1e2b9c6e6135d476, []int{11}
 }
 
 func (m *VirtualMachineRepairGuestAgentRequest) XXX_Unmarshal(b []byte) error {
@@ -676,7 +637,7 @@ func (m *VirtualMachineRepairGuestAgentResponse) Reset() {
 func (m *VirtualMachineRepairGuestAgentResponse) String() string { return proto.CompactTextString(m) }
 func (*VirtualMachineRepairGuestAgentResponse) ProtoMessage()    {}
 func (*VirtualMachineRepairGuestAgentResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_1e2b9c6e6135d476, []int{13}
+	return fileDescriptor_1e2b9c6e6135d476, []int{12}
 }
 
 func (m *VirtualMachineRepairGuestAgentResponse) XXX_Unmarshal(b []byte) error {
@@ -712,18 +673,17 @@ func (m *VirtualMachineRepairGuestAgentResponse) GetError() string {
 }
 
 func init() {
+	proto.RegisterType((*OperatingSystemConfiguration)(nil), "moc.mochostagent.compute.OperatingSystemConfiguration")
+	proto.RegisterType((*VirtualMachine)(nil), "moc.mochostagent.compute.VirtualMachine")
+	proto.RegisterType((*GetVirtualMachineResponse)(nil), "moc.mochostagent.compute.GetVirtualMachineResponse")
 	proto.RegisterType((*RegisterVirtualMachineRequest)(nil), "moc.mochostagent.compute.RegisterVirtualMachineRequest")
 	proto.RegisterType((*RegisterVirtualMachineInstanceView)(nil), "moc.mochostagent.compute.RegisterVirtualMachineInstanceView")
 	proto.RegisterType((*RegisterVirtualMachineResponse)(nil), "moc.mochostagent.compute.RegisterVirtualMachineResponse")
 	proto.RegisterType((*DeregisterVirtualMachineRequest)(nil), "moc.mochostagent.compute.DeregisterVirtualMachineRequest")
 	proto.RegisterType((*DeregisterVirtualMachineInstanceView)(nil), "moc.mochostagent.compute.DeregisterVirtualMachineInstanceView")
 	proto.RegisterType((*DeregisterVirtualMachineResponse)(nil), "moc.mochostagent.compute.DeregisterVirtualMachineResponse")
-	proto.RegisterType((*OperatingSystemConfiguration)(nil), "moc.mochostagent.compute.OperatingSystemConfiguration")
-	proto.RegisterType((*VirtualMachine)(nil), "moc.mochostagent.compute.VirtualMachine")
 	proto.RegisterType((*VirtualMachineRunCommandRequest)(nil), "moc.mochostagent.compute.VirtualMachineRunCommandRequest")
 	proto.RegisterType((*VirtualMachineRunCommandResponse)(nil), "moc.mochostagent.compute.VirtualMachineRunCommandResponse")
-	proto.RegisterType((*GuestAgentInfoRequest)(nil), "moc.mochostagent.compute.GuestAgentInfoRequest")
-	proto.RegisterType((*GuestAgentInfoResponse)(nil), "moc.mochostagent.compute.GuestAgentInfoResponse")
 	proto.RegisterType((*VirtualMachineRepairGuestAgentRequest)(nil), "moc.mochostagent.compute.VirtualMachineRepairGuestAgentRequest")
 	proto.RegisterType((*VirtualMachineRepairGuestAgentResponse)(nil), "moc.mochostagent.compute.VirtualMachineRepairGuestAgentResponse")
 }
@@ -733,66 +693,64 @@ func init() {
 }
 
 var fileDescriptor_1e2b9c6e6135d476 = []byte{
-	// 937 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x56, 0x4d, 0x6f, 0x1b, 0x45,
-	0x18, 0xee, 0x3a, 0xa9, 0xc1, 0xaf, 0x4b, 0x94, 0x0c, 0x60, 0x5c, 0x43, 0x5a, 0x6b, 0x69, 0xa3,
-	0xb4, 0x20, 0xbb, 0xb8, 0x12, 0x5f, 0x42, 0x40, 0xe2, 0xa6, 0x6d, 0x0e, 0xa1, 0xd1, 0x24, 0xe4,
-	0x80, 0x90, 0xca, 0x64, 0x3d, 0x5e, 0x8f, 0xf0, 0xce, 0x2c, 0x33, 0xb3, 0x04, 0x5f, 0x38, 0x20,
-	0x81, 0xb8, 0x70, 0xca, 0x81, 0x1b, 0x88, 0x1f, 0xc1, 0xff, 0x43, 0x3b, 0x3b, 0xae, 0x77, 0xd7,
-	0xbb, 0x76, 0x12, 0xd4, 0x93, 0xbd, 0xf3, 0x7e, 0x3d, 0xcf, 0xfb, 0x35, 0x03, 0x77, 0x03, 0xe1,
-	0x3d, 0x0f, 0x84, 0x37, 0x12, 0x4a, 0x13, 0x9f, 0x72, 0xfd, 0xfc, 0x47, 0x26, 0x75, 0x44, 0xc6,
-	0x01, 0xf1, 0x46, 0x8c, 0xd3, 0x4e, 0x28, 0x85, 0x16, 0xa8, 0x19, 0x08, 0xaf, 0x93, 0x56, 0xeb,
-	0x78, 0x22, 0x08, 0x23, 0x4d, 0x5b, 0x6f, 0xfb, 0x42, 0xf8, 0x63, 0xda, 0x35, 0x7a, 0xa7, 0xd1,
-	0xb0, 0x4b, 0x83, 0x50, 0x4f, 0x12, 0xb3, 0xd6, 0xad, 0xbc, 0xf0, 0x4c, 0x92, 0x30, 0xa4, 0x52,
-	0x59, 0xf9, 0x5b, 0x71, 0x74, 0x4f, 0x04, 0x81, 0xe0, 0xf6, 0x67, 0x6a, 0x98, 0x15, 0xc4, 0x91,
-	0x32, 0xf2, 0xcd, 0x94, 0x9c, 0x0b, 0xcd, 0x86, 0xcc, 0x23, 0x9a, 0x4d, 0xc5, 0xee, 0xdf, 0x0e,
-	0x6c, 0x62, 0xea, 0x33, 0xa5, 0xa9, 0x3c, 0x49, 0xf8, 0x1c, 0x24, 0x7c, 0x30, 0xfd, 0x21, 0xa2,
-	0x4a, 0xa3, 0x43, 0x58, 0xcb, 0x0a, 0x9a, 0x4e, 0xdb, 0xd9, 0xae, 0xf7, 0xb6, 0x3b, 0x65, 0x4c,
-	0x3b, 0x39, 0x47, 0x39, 0x7b, 0xf4, 0x3e, 0x6c, 0x9c, 0x11, 0xa6, 0x1f, 0x0b, 0xd9, 0x17, 0x9c,
-	0x53, 0x2f, 0x86, 0xd3, 0xac, 0xb4, 0x9d, 0xed, 0x57, 0xf1, 0xbc, 0xc0, 0xc5, 0xe0, 0x16, 0x03,
-	0xdc, 0xe7, 0x4a, 0x13, 0xee, 0xd1, 0x13, 0x46, 0xcf, 0x50, 0x03, 0xaa, 0xcf, 0x22, 0x1d, 0x46,
-	0xda, 0xa0, 0xab, 0x61, 0xfb, 0x85, 0xde, 0x80, 0xeb, 0x7b, 0x52, 0x0a, 0x69, 0xfc, 0xd7, 0x70,
-	0xf2, 0xe1, 0xfe, 0xe2, 0xc0, 0xad, 0x32, 0xd6, 0x2a, 0x14, 0x5c, 0x51, 0xf4, 0x1d, 0xdc, 0x48,
-	0x07, 0xb0, 0xa4, 0x3f, 0x2b, 0x27, 0xbd, 0x1c, 0x24, 0xce, 0x78, 0x74, 0x0f, 0xe0, 0xf6, 0x23,
-	0x2a, 0x17, 0xe6, 0xfe, 0x3e, 0xac, 0xe7, 0xdc, 0x0d, 0x2c, 0xbf, 0xb9, 0x73, 0xf7, 0x18, 0xee,
-	0x94, 0xb9, 0xfb, 0x1f, 0x99, 0xfa, 0xcd, 0x81, 0x76, 0x39, 0x4a, 0x9b, 0xab, 0xd3, 0xc2, 0x5c,
-	0x7d, 0x5e, 0x9e, 0xab, 0x8b, 0x00, 0xcd, 0x65, 0xeb, 0x10, 0xde, 0x79, 0x16, 0x52, 0x49, 0x34,
-	0xe3, 0xfe, 0xd1, 0x44, 0x69, 0x1a, 0xf4, 0x05, 0x1f, 0x32, 0x3f, 0x92, 0xa6, 0x9d, 0xd1, 0x03,
-	0xa8, 0x0a, 0xa5, 0x27, 0x61, 0xd2, 0x9e, 0x6b, 0xbd, 0xa6, 0x89, 0x9e, 0x33, 0x39, 0x9e, 0x84,
-	0x14, 0x5b, 0x3d, 0xf7, 0xaf, 0x4a, 0xbe, 0xb3, 0x11, 0x82, 0x55, 0x4e, 0x02, 0x6a, 0x33, 0x63,
-	0xfe, 0xa3, 0x35, 0xa8, 0xb0, 0x81, 0x4d, 0x4a, 0x85, 0x0d, 0xd0, 0x63, 0xa8, 0x08, 0xd5, 0x5c,
-	0x31, 0x14, 0x3f, 0x2c, 0xa7, 0xb8, 0x08, 0x2c, 0xae, 0x08, 0x85, 0xde, 0x85, 0x2a, 0xe5, 0x9a,
-	0xe9, 0x49, 0x73, 0xd5, 0xf8, 0xaa, 0x1b, 0x5f, 0x7b, 0xe6, 0x08, 0x5b, 0x11, 0xda, 0x84, 0x55,
-	0x4d, 0x7c, 0xd5, 0xbc, 0x6e, 0x54, 0x6a, 0x46, 0xe5, 0x98, 0xf8, 0x0a, 0x9b, 0x63, 0xf4, 0x2d,
-	0x34, 0xfc, 0xb8, 0x51, 0x76, 0xe2, 0xd0, 0x99, 0x12, 0x54, 0x8d, 0xc1, 0x1d, 0x63, 0x90, 0x25,
-	0x39, 0xa7, 0x8b, 0x4b, 0x7c, 0xb8, 0xe7, 0x2b, 0x70, 0x3b, 0x57, 0xf1, 0x88, 0xf7, 0x45, 0x10,
-	0x10, 0x3e, 0x78, 0x79, 0xdb, 0x61, 0x07, 0xaa, 0x47, 0x22, 0x92, 0x1e, 0x35, 0x39, 0xaf, 0xf7,
-	0xee, 0x15, 0x70, 0x98, 0xe1, 0x38, 0xf2, 0x24, 0x0b, 0x75, 0x62, 0x80, 0xad, 0x21, 0x62, 0x70,
-	0x73, 0xa6, 0xb1, 0xcf, 0xc3, 0x48, 0x1f, 0x12, 0x49, 0x02, 0xaa, 0xa9, 0x8c, 0x2b, 0xb7, 0xb2,
-	0x5d, 0xef, 0xbd, 0xb7, 0xd0, 0x6b, 0xd6, 0x06, 0x97, 0x7b, 0x43, 0x6d, 0xa8, 0xdb, 0x4a, 0x0b,
-	0xbe, 0xff, 0xc8, 0x94, 0xb2, 0x86, 0xd3, 0x47, 0xc8, 0x85, 0x1a, 0x8e, 0xf8, 0x8e, 0xfa, 0x5a,
-	0x51, 0x69, 0xea, 0x58, 0xdb, 0x5d, 0xfd, 0xfd, 0xdf, 0xa6, 0x83, 0x67, 0xc7, 0xe8, 0x3e, 0xbc,
-	0x66, 0x3e, 0x0e, 0x89, 0x52, 0x67, 0x42, 0x0e, 0x4c, 0xf9, 0xa6, 0x7a, 0x59, 0x91, 0x7b, 0xee,
-	0x40, 0xbb, 0xbc, 0x2a, 0x76, 0x22, 0x0f, 0x0a, 0x27, 0xf2, 0xde, 0x12, 0xd2, 0x65, 0xc3, 0x97,
-	0x67, 0x59, 0x99, 0x63, 0xe9, 0xf6, 0xe1, 0xcd, 0x27, 0xa9, 0x2e, 0x1a, 0x8a, 0xab, 0xac, 0xb0,
-	0x9f, 0xa1, 0x91, 0x77, 0x62, 0xf9, 0x6c, 0xc1, 0x2b, 0x27, 0x54, 0xaa, 0xf8, 0xa2, 0x48, 0xa8,
-	0xdc, 0x48, 0xa8, 0x24, 0x67, 0x78, 0x2a, 0x44, 0x5b, 0x70, 0xfd, 0x48, 0x13, 0x9d, 0xf4, 0xce,
-	0x5a, 0x6f, 0xdd, 0x68, 0x3d, 0xa5, 0x64, 0xac, 0x47, 0xe6, 0x1c, 0x27, 0xe2, 0xd9, 0xb2, 0x5b,
-	0x49, 0x2f, 0xbb, 0x09, 0xdc, 0xcd, 0x6f, 0xb8, 0x90, 0x30, 0x39, 0xc3, 0xf4, 0xd2, 0xba, 0xde,
-	0x95, 0xb0, 0xb5, 0x2c, 0xb4, 0x4d, 0x45, 0x0f, 0xaa, 0x98, 0xaa, 0x68, 0xac, 0x6d, 0xcc, 0x56,
-	0x27, 0x79, 0x3a, 0x74, 0xa6, 0x4f, 0x87, 0xce, 0xae, 0x10, 0xe3, 0x13, 0x32, 0x8e, 0x28, 0xb6,
-	0x9a, 0xc5, 0xbb, 0xbd, 0xf7, 0x4f, 0x15, 0x5e, 0x2f, 0xd8, 0x0d, 0xe8, 0x0f, 0x07, 0x1a, 0xc5,
-	0xb7, 0x19, 0xfa, 0xe8, 0xb2, 0xf7, 0x9f, 0xcd, 0x58, 0xeb, 0xe3, 0xcb, 0x1b, 0x26, 0x7c, 0xdd,
-	0x6b, 0xe8, 0xdc, 0x81, 0x66, 0xd9, 0x8d, 0x81, 0x3e, 0xb9, 0xfc, 0x2d, 0x33, 0xc5, 0xf4, 0xe9,
-	0x55, 0x4c, 0x5f, 0xa0, 0xfa, 0xd5, 0x01, 0x98, 0x0d, 0xcf, 0x22, 0x1c, 0x4b, 0x76, 0xe8, 0x22,
-	0x1c, 0xcb, 0x06, 0xdd, 0xbd, 0x86, 0x9e, 0xc2, 0x46, 0x7f, 0x44, 0xbd, 0xef, 0xbf, 0x4a, 0x3d,
-	0xee, 0x50, 0x63, 0xae, 0x29, 0xf6, 0xe2, 0xc7, 0x66, 0xeb, 0xa6, 0x09, 0x95, 0x56, 0x4d, 0x79,
-	0xfa, 0x09, 0x36, 0x9e, 0x50, 0x9d, 0x9d, 0x40, 0xd4, 0x2d, 0x07, 0x57, 0x38, 0xf0, 0xad, 0x07,
-	0x17, 0x37, 0x78, 0x11, 0xf9, 0x4f, 0x07, 0xd6, 0xf3, 0x0d, 0x8f, 0xbe, 0xb8, 0x70, 0x5a, 0x8a,
-	0xa7, 0xb4, 0xf5, 0xe5, 0xd5, 0x1d, 0x4c, 0x91, 0xed, 0x3e, 0xfc, 0xe6, 0x03, 0x9f, 0xe9, 0x51,
-	0x74, 0x1a, 0x9b, 0x76, 0x03, 0xe6, 0x49, 0xa1, 0xc4, 0x50, 0x77, 0x03, 0xe1, 0x75, 0x65, 0xe8,
-	0x75, 0xd3, 0xde, 0xbb, 0xd6, 0xfb, 0x69, 0xd5, 0x64, 0xfd, 0xe1, 0x7f, 0x01, 0x00, 0x00, 0xff,
-	0xff, 0x3b, 0x60, 0x74, 0xda, 0x33, 0x0c, 0x00, 0x00,
+	// 898 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x56, 0xcf, 0x6f, 0xe3, 0x44,
+	0x18, 0x5d, 0xa7, 0x5d, 0x8b, 0x7c, 0x81, 0x6a, 0x77, 0x40, 0xc5, 0x0d, 0x74, 0x37, 0x32, 0xbb,
+	0xa8, 0xbb, 0x20, 0x07, 0x52, 0x89, 0x5f, 0x42, 0x40, 0xdb, 0xed, 0x96, 0x1e, 0xca, 0x56, 0xd3,
+	0xd2, 0x03, 0x42, 0x5a, 0xa6, 0xce, 0xc4, 0x1d, 0x11, 0xcf, 0x98, 0x99, 0x31, 0x55, 0xae, 0x48,
+	0x20, 0x2e, 0x88, 0x43, 0x0f, 0xdc, 0xe0, 0xaf, 0x40, 0xfc, 0x7b, 0xc8, 0xe3, 0x49, 0x63, 0x3b,
+	0x71, 0xd2, 0xee, 0xaa, 0xa7, 0xc4, 0xf3, 0xfd, 0x98, 0xf7, 0xde, 0x7c, 0xf3, 0x6c, 0x78, 0x18,
+	0x8b, 0xf0, 0x79, 0x2c, 0xc2, 0x33, 0xa1, 0x34, 0x89, 0x28, 0xd7, 0xcf, 0x7f, 0x66, 0x52, 0xa7,
+	0x64, 0x18, 0x93, 0xf0, 0x8c, 0x71, 0x1a, 0x24, 0x52, 0x68, 0x81, 0xbc, 0x58, 0x84, 0x41, 0x31,
+	0x2d, 0x08, 0x45, 0x9c, 0xa4, 0x9a, 0xb6, 0xdf, 0x8a, 0x84, 0x88, 0x86, 0xb4, 0x6b, 0xf2, 0x4e,
+	0xd3, 0x41, 0x97, 0xc6, 0x89, 0x1e, 0xe5, 0x65, 0xed, 0x7b, 0xd5, 0xe0, 0xb9, 0x24, 0x49, 0x42,
+	0xa5, 0xb2, 0xf1, 0x37, 0xb3, 0xdd, 0x43, 0x11, 0xc7, 0x82, 0xdb, 0x9f, 0x71, 0x61, 0x39, 0x90,
+	0xed, 0x54, 0x8a, 0xaf, 0x17, 0xe2, 0x5c, 0x68, 0x36, 0x60, 0x21, 0xd1, 0x6c, 0x1c, 0xf6, 0x0f,
+	0xe1, 0xed, 0x67, 0x09, 0x95, 0x44, 0x33, 0x1e, 0x1d, 0x8d, 0x94, 0xa6, 0xf1, 0x8e, 0xe0, 0x03,
+	0x16, 0xa5, 0xd2, 0x64, 0xa1, 0x0f, 0xc0, 0x15, 0x4a, 0x8f, 0x12, 0xea, 0x39, 0x1d, 0x67, 0x63,
+	0xa5, 0xe7, 0x65, 0xdc, 0x82, 0x4a, 0xc9, 0xf1, 0x28, 0xa1, 0xd8, 0xe6, 0xf9, 0x7f, 0x37, 0x60,
+	0xe5, 0x24, 0x57, 0xe6, 0x20, 0x57, 0x06, 0x21, 0x58, 0xe6, 0x24, 0xce, 0x5b, 0x34, 0xb1, 0xf9,
+	0x8f, 0x56, 0xa0, 0xc1, 0xfa, 0x5e, 0xc3, 0xac, 0x34, 0x58, 0x1f, 0x3d, 0x85, 0x86, 0x50, 0xde,
+	0x52, 0xc7, 0xd9, 0x68, 0xf5, 0x3e, 0x0a, 0xea, 0x44, 0x0c, 0xe6, 0x81, 0xc5, 0x0d, 0xa1, 0xd0,
+	0x3b, 0xe0, 0x52, 0xae, 0x99, 0x1e, 0x79, 0xcb, 0xa6, 0x57, 0xcb, 0xf4, 0xda, 0x35, 0x4b, 0xd8,
+	0x86, 0xd0, 0x3a, 0x2c, 0x6b, 0x12, 0x29, 0xef, 0xb6, 0x49, 0x69, 0x9a, 0x94, 0x63, 0x12, 0x29,
+	0x6c, 0x96, 0xd1, 0xf7, 0xb0, 0x1a, 0xa5, 0x54, 0xe9, 0xad, 0x6c, 0xeb, 0x7d, 0xae, 0x34, 0xe1,
+	0x21, 0x3d, 0x61, 0xf4, 0xdc, 0x73, 0x4d, 0xc1, 0x03, 0x53, 0x50, 0x26, 0x39, 0x95, 0x8b, 0x6b,
+	0x7a, 0xf8, 0xff, 0x39, 0xb0, 0xb6, 0x47, 0x75, 0xb9, 0x1c, 0x53, 0x95, 0x08, 0xae, 0x28, 0x3a,
+	0xac, 0xaa, 0x67, 0x54, 0x6b, 0xf5, 0x36, 0xea, 0x35, 0xa9, 0x74, 0xaa, 0xaa, 0xdf, 0x03, 0x17,
+	0x53, 0x95, 0x0e, 0xb5, 0x51, 0xbb, 0xd5, 0x6b, 0x07, 0xf9, 0xac, 0x05, 0xe3, 0x59, 0x0b, 0xb6,
+	0x85, 0x18, 0x9e, 0x90, 0x61, 0x4a, 0xb1, 0xcd, 0x44, 0x6f, 0xc0, 0xed, 0x5d, 0x29, 0x85, 0x34,
+	0x07, 0xd2, 0xc4, 0xf9, 0x83, 0xff, 0x8f, 0x03, 0xeb, 0x98, 0x46, 0x4c, 0x69, 0x2a, 0xab, 0xf0,
+	0x7f, 0xca, 0xc8, 0xde, 0x00, 0xfa, 0xf7, 0xe1, 0xee, 0x39, 0x61, 0xfa, 0xa9, 0x90, 0x3b, 0x82,
+	0x73, 0x1a, 0x66, 0x07, 0x6d, 0x88, 0xbc, 0x82, 0xa7, 0x03, 0x3e, 0x06, 0x7f, 0x36, 0xc0, 0xe2,
+	0x09, 0xa0, 0x55, 0x70, 0x9f, 0xa5, 0x3a, 0x49, 0xb5, 0x9d, 0x48, 0xfb, 0x34, 0x61, 0xdd, 0x28,
+	0xb2, 0xfe, 0xc5, 0x81, 0x7b, 0x75, 0xac, 0xed, 0xa1, 0xfd, 0x00, 0xaf, 0x96, 0xc6, 0x24, 0x27,
+	0xfd, 0x79, 0x3d, 0xe9, 0xc5, 0x20, 0x71, 0xa9, 0xa3, 0x7f, 0x00, 0xf7, 0x9f, 0x50, 0x39, 0x57,
+	0xfb, 0xc7, 0x70, 0xa7, 0xd2, 0xae, 0x6f, 0xf9, 0x4d, 0xad, 0xfb, 0xc7, 0xf0, 0xa0, 0xae, 0xdd,
+	0x4b, 0x28, 0xf5, 0x9b, 0x03, 0x9d, 0x7a, 0x94, 0x56, 0xab, 0xd3, 0x99, 0x5a, 0x7d, 0x51, 0xaf,
+	0xd5, 0x55, 0x80, 0x56, 0xd4, 0xba, 0x58, 0x82, 0xfb, 0x95, 0xed, 0x53, 0xbe, 0x23, 0xe2, 0x98,
+	0xf0, 0xfe, 0xcd, 0x8d, 0xea, 0x16, 0xb8, 0x47, 0x22, 0x95, 0x21, 0xb5, 0x17, 0xed, 0xd1, 0x0c,
+	0x9b, 0x98, 0xe0, 0x38, 0x0a, 0x25, 0x4b, 0x74, 0x5e, 0x80, 0x6d, 0x21, 0x62, 0xb0, 0x36, 0xc9,
+	0xd8, 0xe7, 0x49, 0xaa, 0x0f, 0x89, 0x24, 0x31, 0xd5, 0x54, 0x66, 0xe6, 0xb8, 0xb4, 0xd1, 0xea,
+	0xbd, 0x37, 0xb7, 0x6b, 0xb9, 0x06, 0xd7, 0x77, 0x43, 0x1d, 0x68, 0x59, 0x33, 0x15, 0x7c, 0xff,
+	0x89, 0x71, 0xcb, 0x26, 0x2e, 0x2e, 0x21, 0x1f, 0x9a, 0x38, 0xe5, 0x5b, 0xea, 0x5b, 0x45, 0xa5,
+	0xb1, 0xca, 0xe6, 0xf6, 0xf2, 0xef, 0xff, 0x7a, 0x0e, 0x9e, 0x2c, 0xa3, 0xc7, 0xf0, 0x9a, 0x79,
+	0x38, 0x24, 0x4a, 0x9d, 0x0b, 0xd9, 0x37, 0x0e, 0x39, 0xce, 0x2b, 0x87, 0xfc, 0x0b, 0x07, 0x3a,
+	0xf5, 0xa7, 0x62, 0xc7, 0xe3, 0x60, 0xe6, 0x78, 0x3c, 0x5a, 0x40, 0xba, 0x6e, 0x12, 0xaa, 0x2c,
+	0x1b, 0x53, 0x2c, 0xfd, 0x11, 0x3c, 0xac, 0x4e, 0x6a, 0x42, 0x98, 0xdc, 0xbb, 0x34, 0xef, 0x1b,
+	0x1b, 0x18, 0x5f, 0xc2, 0xbb, 0x8b, 0xb6, 0xb6, 0xaa, 0x4c, 0x3c, 0xdc, 0xb9, 0xbe, 0x87, 0x17,
+	0xef, 0x68, 0xef, 0x4f, 0x17, 0x5e, 0x9f, 0xf1, 0xe6, 0x42, 0x03, 0x58, 0xda, 0xa3, 0x1a, 0x5d,
+	0x99, 0x4c, 0x7b, 0xb3, 0x3e, 0xb3, 0xf6, 0xed, 0xe6, 0xdf, 0x42, 0x7f, 0x38, 0xb0, 0x3a, 0xdb,
+	0xfd, 0xd0, 0xc7, 0xd7, 0xf5, 0x4b, 0x7b, 0x32, 0xed, 0x4f, 0xae, 0x5f, 0x78, 0x89, 0xe7, 0xc2,
+	0x01, 0xaf, 0xce, 0x61, 0xd0, 0xa7, 0xd7, 0x77, 0xa5, 0x31, 0xa6, 0xcf, 0x5e, 0xa4, 0xf4, 0x12,
+	0xd5, 0xaf, 0x0e, 0xc0, 0x64, 0xbe, 0xe7, 0xe1, 0x58, 0x60, 0x73, 0xf3, 0x70, 0x2c, 0xba, 0x8b,
+	0xfe, 0x2d, 0xf4, 0x35, 0xdc, 0xdd, 0x39, 0xa3, 0xe1, 0x8f, 0xdf, 0x14, 0xbe, 0x1c, 0xd1, 0xea,
+	0xd4, 0xf0, 0xed, 0x66, 0x5f, 0xb2, 0xed, 0x35, 0xb3, 0x55, 0x31, 0xb5, 0xd0, 0xe9, 0x2f, 0x07,
+	0xee, 0x54, 0xc7, 0x1b, 0x7d, 0x79, 0x65, 0x70, 0xb3, 0xef, 0x64, 0xfb, 0xab, 0x17, 0x6f, 0x30,
+	0x46, 0xb6, 0xbd, 0xf9, 0xdd, 0x87, 0x11, 0xd3, 0x67, 0xe9, 0x69, 0x56, 0xda, 0x8d, 0x59, 0x28,
+	0x85, 0x12, 0x03, 0xdd, 0x8d, 0x45, 0xd8, 0x95, 0x49, 0xd8, 0x2d, 0x76, 0xef, 0xda, 0xee, 0xa7,
+	0xae, 0xe1, 0xbe, 0xf9, 0x7f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xa6, 0xb6, 0xa7, 0xea, 0x16, 0x0c,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -807,11 +765,11 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type VirtualMachineAgentClient interface {
+	Get(ctx context.Context, in *VirtualMachine, opts ...grpc.CallOption) (*GetVirtualMachineResponse, error)
 	RegisterVirtualMachine(ctx context.Context, in *RegisterVirtualMachineRequest, opts ...grpc.CallOption) (*RegisterVirtualMachineResponse, error)
 	DeregisterVirtualMachine(ctx context.Context, in *DeregisterVirtualMachineRequest, opts ...grpc.CallOption) (*DeregisterVirtualMachineResponse, error)
 	RunCommand(ctx context.Context, in *VirtualMachineRunCommandRequest, opts ...grpc.CallOption) (*VirtualMachineRunCommandResponse, error)
 	CheckNotification(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*common.NotificationResponse, error)
-	GetGuestAgentInfo(ctx context.Context, in *GuestAgentInfoRequest, opts ...grpc.CallOption) (*GuestAgentInfoResponse, error)
 	RepairGuestAgent(ctx context.Context, in *VirtualMachineRepairGuestAgentRequest, opts ...grpc.CallOption) (*VirtualMachineRepairGuestAgentResponse, error)
 }
 
@@ -821,6 +779,15 @@ type virtualMachineAgentClient struct {
 
 func NewVirtualMachineAgentClient(cc *grpc.ClientConn) VirtualMachineAgentClient {
 	return &virtualMachineAgentClient{cc}
+}
+
+func (c *virtualMachineAgentClient) Get(ctx context.Context, in *VirtualMachine, opts ...grpc.CallOption) (*GetVirtualMachineResponse, error) {
+	out := new(GetVirtualMachineResponse)
+	err := c.cc.Invoke(ctx, "/moc.mochostagent.compute.VirtualMachineAgent/Get", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *virtualMachineAgentClient) RegisterVirtualMachine(ctx context.Context, in *RegisterVirtualMachineRequest, opts ...grpc.CallOption) (*RegisterVirtualMachineResponse, error) {
@@ -859,15 +826,6 @@ func (c *virtualMachineAgentClient) CheckNotification(ctx context.Context, in *e
 	return out, nil
 }
 
-func (c *virtualMachineAgentClient) GetGuestAgentInfo(ctx context.Context, in *GuestAgentInfoRequest, opts ...grpc.CallOption) (*GuestAgentInfoResponse, error) {
-	out := new(GuestAgentInfoResponse)
-	err := c.cc.Invoke(ctx, "/moc.mochostagent.compute.VirtualMachineAgent/GetGuestAgentInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *virtualMachineAgentClient) RepairGuestAgent(ctx context.Context, in *VirtualMachineRepairGuestAgentRequest, opts ...grpc.CallOption) (*VirtualMachineRepairGuestAgentResponse, error) {
 	out := new(VirtualMachineRepairGuestAgentResponse)
 	err := c.cc.Invoke(ctx, "/moc.mochostagent.compute.VirtualMachineAgent/RepairGuestAgent", in, out, opts...)
@@ -879,11 +837,11 @@ func (c *virtualMachineAgentClient) RepairGuestAgent(ctx context.Context, in *Vi
 
 // VirtualMachineAgentServer is the server API for VirtualMachineAgent service.
 type VirtualMachineAgentServer interface {
+	Get(context.Context, *VirtualMachine) (*GetVirtualMachineResponse, error)
 	RegisterVirtualMachine(context.Context, *RegisterVirtualMachineRequest) (*RegisterVirtualMachineResponse, error)
 	DeregisterVirtualMachine(context.Context, *DeregisterVirtualMachineRequest) (*DeregisterVirtualMachineResponse, error)
 	RunCommand(context.Context, *VirtualMachineRunCommandRequest) (*VirtualMachineRunCommandResponse, error)
 	CheckNotification(context.Context, *empty.Empty) (*common.NotificationResponse, error)
-	GetGuestAgentInfo(context.Context, *GuestAgentInfoRequest) (*GuestAgentInfoResponse, error)
 	RepairGuestAgent(context.Context, *VirtualMachineRepairGuestAgentRequest) (*VirtualMachineRepairGuestAgentResponse, error)
 }
 
@@ -891,6 +849,9 @@ type VirtualMachineAgentServer interface {
 type UnimplementedVirtualMachineAgentServer struct {
 }
 
+func (*UnimplementedVirtualMachineAgentServer) Get(ctx context.Context, req *VirtualMachine) (*GetVirtualMachineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
 func (*UnimplementedVirtualMachineAgentServer) RegisterVirtualMachine(ctx context.Context, req *RegisterVirtualMachineRequest) (*RegisterVirtualMachineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterVirtualMachine not implemented")
 }
@@ -903,15 +864,30 @@ func (*UnimplementedVirtualMachineAgentServer) RunCommand(ctx context.Context, r
 func (*UnimplementedVirtualMachineAgentServer) CheckNotification(ctx context.Context, req *empty.Empty) (*common.NotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckNotification not implemented")
 }
-func (*UnimplementedVirtualMachineAgentServer) GetGuestAgentInfo(ctx context.Context, req *GuestAgentInfoRequest) (*GuestAgentInfoResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGuestAgentInfo not implemented")
-}
 func (*UnimplementedVirtualMachineAgentServer) RepairGuestAgent(ctx context.Context, req *VirtualMachineRepairGuestAgentRequest) (*VirtualMachineRepairGuestAgentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RepairGuestAgent not implemented")
 }
 
 func RegisterVirtualMachineAgentServer(s *grpc.Server, srv VirtualMachineAgentServer) {
 	s.RegisterService(&_VirtualMachineAgent_serviceDesc, srv)
+}
+
+func _VirtualMachineAgent_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VirtualMachine)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VirtualMachineAgentServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/moc.mochostagent.compute.VirtualMachineAgent/Get",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VirtualMachineAgentServer).Get(ctx, req.(*VirtualMachine))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _VirtualMachineAgent_RegisterVirtualMachine_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -986,24 +962,6 @@ func _VirtualMachineAgent_CheckNotification_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _VirtualMachineAgent_GetGuestAgentInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GuestAgentInfoRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(VirtualMachineAgentServer).GetGuestAgentInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/moc.mochostagent.compute.VirtualMachineAgent/GetGuestAgentInfo",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(VirtualMachineAgentServer).GetGuestAgentInfo(ctx, req.(*GuestAgentInfoRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _VirtualMachineAgent_RepairGuestAgent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(VirtualMachineRepairGuestAgentRequest)
 	if err := dec(in); err != nil {
@@ -1027,6 +985,10 @@ var _VirtualMachineAgent_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*VirtualMachineAgentServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "Get",
+			Handler:    _VirtualMachineAgent_Get_Handler,
+		},
+		{
 			MethodName: "RegisterVirtualMachine",
 			Handler:    _VirtualMachineAgent_RegisterVirtualMachine_Handler,
 		},
@@ -1041,10 +1003,6 @@ var _VirtualMachineAgent_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckNotification",
 			Handler:    _VirtualMachineAgent_CheckNotification_Handler,
-		},
-		{
-			MethodName: "GetGuestAgentInfo",
-			Handler:    _VirtualMachineAgent_GetGuestAgentInfo_Handler,
 		},
 		{
 			MethodName: "RepairGuestAgent",
